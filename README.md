@@ -15,7 +15,7 @@ Getting Started:
   2:npm or yarn
   
 Installation:
-1:Clone the respository: git clone https://github.com/your-username/tic-tac-toe-react.git
+1:Clone the respository: git clone https://github.com/moizkaseer/tic-tac-toe-react.git
 2:Navigate to the project directory : cd tic-tac-toe-react/my-react-app
 3:Install dependencies: npm install or yarn install
 
