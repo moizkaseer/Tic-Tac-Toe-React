@@ -80,6 +80,90 @@ body {
   white-space: nowrap;
 }
 
+.game-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.control-button {
+  padding: 0.5rem 1rem;
+  background: rgba(78, 204, 163, 0.2);
+  border: 1px solid #4ecca3;
+  border-radius: 8px;
+  color: #4ecca3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.control-button:hover {
+  background: rgba(78, 204, 163, 0.3);
+  transform: scale(1.05);
+}
+
+.settings-panel {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(78, 204, 163, 0.3);
+}
+
+.settings-group {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.settings-group label {
+  color: #4ecca3;
+  min-width: 120px;
+  text-align: right;
+}
+
+.settings-group input,
+.settings-group select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #4ecca3;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: #4ecca3;
+  width: 150px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.score-item {
+  background: rgba(78, 204, 163, 0.1);
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(78, 204, 163, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-name {
+  color: #4ecca3;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.score {
+  color: #4ecca3;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .status {
   font-size: 1.5rem;
   color: #4ecca3;
@@ -115,6 +199,11 @@ body {
   box-shadow: 0 0 15px rgba(78, 204, 163, 0.3);
 }
 
+.square1.winning {
+  background: rgba(78, 204, 163, 0.3);
+  animation: winner 0.5s ease-in-out infinite alternate;
+}
+
 .borad-row {
   display: flex;
   justify-content: center;
@@ -130,6 +219,17 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes winner {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(78, 204, 163, 0.3);
+  }
+  to {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(78, 204, 163, 0.5);
   }
 }
 
@@ -149,5 +249,24 @@ body {
   .status {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+  }
+
+  .game-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .settings-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .settings-group label {
+    text-align: center;
+  }
+
+  .scoreboard {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
